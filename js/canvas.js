@@ -1,10 +1,10 @@
 
 globals.init = (input) => {
 
-    // set sketches and update canvas
+    // set sketches and update page
     sketches = input;
     index = 0;
-    updateCanvas();
+    updatePage();
 
     //
     document.getElementById("jumpText").disabled = false;
@@ -22,16 +22,16 @@ globals.init = (input) => {
 
 globals.backCanvas = () => {
 
-    // update canvas
+    // update page
     --index;
-    updateCanvas();
+    updatePage();
 };
 
 globals.nextCanvas = () => {
 
-    // update canvas
+    // update page
     ++index;
-    updateCanvas();
+    updatePage();
 };
 
 globals.jumpCanvas = () => {
@@ -46,8 +46,13 @@ globals.jumpCanvas = () => {
         return;
     }
     
-    // updateCanvas
+    // update page
     index = value - 1;
+    updatePage();
+}
+
+function updatePage() {
+
     updateCanvas();
 }
 
@@ -71,6 +76,14 @@ function updateCanvas() {
         document.getElementById("backButton").disabled = false;
         document.getElementById("nextButton").disabled = false;
     }
+
+    // display sketch label(s)
+    let labels = "";
+    for (let shape of sketch.shapes) {
+
+        labels += `<strong>Label:</strong> ${shape.interpretation}<br>`;
+    }
+    document.getElementById("labelText").innerHTML = labels;
 }
 
 function drawStrokes(sketch) {

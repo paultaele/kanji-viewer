@@ -20,6 +20,19 @@ window.addEventListener("load", () => {
     function onClickBack() { window.globals.backCanvas(); }
     function onClickNext() { window.globals.nextCanvas(); }
     function onClickJump() { window.globals.jumpCanvas(); }
+
+    // 
+    let jumpText = document.getElementById("jumpText");
+    let jumpButton = document.getElementById("jumpButton");
+    jumpText.addEventListener("keyup", (event) => {
+        // number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+        // cancel the default action, if needed
+        event.preventDefault();
+        // trigger the button element with a click
+        jumpButton.click();
+    }
+});
 });
 
 function load(filename) {
