@@ -49,8 +49,6 @@ globals.jumpCanvas = () => {
     // updateCanvas
     index = value - 1;
     updateCanvas();
-
-    // 
 }
 
 function updateCanvas() {
