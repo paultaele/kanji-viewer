@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kanji Viewer</title>
+    <link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="https://unpkg.com/acorn"></script>
+	<script type="text/javascript" src="https://unpkg.com/paper"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/paperscript" src="js/canvas.js" canvas="myCanvas"></script>
+</head>
+
+<body>
+
+    <div class="center">
+
+        <h1>Kanji Viewer</h1>
+
+        <div>
+			<button id="backButton" class="textStyle" disabled>Back</button>
+            <button id="nextButton" class="textStyle" disabled>Next</button>
+            <input type="text" id="jumpText" class="textStyle center" value="" size="1" maxlength="3" disabled>
+            <button id="jumpButton" class="textStyle" disabled>Jump</button>
+            <br>
+            <label for="jumpText" class="textStyle">Enter a value between 1 and 317.</label>
+        </div>
+
+        <br>
+        
+        <canvas id="myCanvas" width="498" height="498" style="border:1px solid #000000;"></canvas>
+		
+    </div>
+
+</body>
+
+</html>
